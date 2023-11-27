@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="mt-32 flex place-content-center">
       <div className="w-full max-w-md">
-      <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 bg-teal-300">
+      <form className="shadow-md rounded px-8 pt-6 pb-8 mb-4 bg-teal-300">
         <h1 className="text-3xl font-bold">
           Todo Application
         </h1>
@@ -52,7 +52,7 @@ function App() {
     </div>
     <div className="flex justify-center m-16">
       <button 
-        className="text-white font-bold py-2 px-4 border border-black rounded"
+        className="font-bold py-2 px-4 border border-black rounded"
         type="button"
       >
         Clear
