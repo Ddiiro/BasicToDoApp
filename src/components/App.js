@@ -20,6 +20,7 @@ function App() {
     },
   ]);
   const [inputVaule, setInputVaule] = useState("");
+  const [indexVaule, setIndexValue] = useState(4);
   function pickValue(e) {
     setInputVaule(e.target.value);
   }
@@ -28,11 +29,12 @@ function App() {
     setTodos([
       ...todos,
       {
-        id: "4",
+        id: indexVaule,
         title: inputVaule,
         isComplete: false,
       },
     ]);
+    setIndexValue(previousIndex => previousIndex +1);
     setInputVaule("");
   }
 
