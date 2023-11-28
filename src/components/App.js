@@ -40,9 +40,8 @@ function App() {
 
   return (
     <div className="mt-32 flex place-content-center">
-      <div className="w-full max-w-md">
+      <div className="w-full max-w-md bg-teal-300 px-8 pt-6 pb-8 mb-4">
         <form
-          className="shadow-md rounded px-8 pt-6 pb-8 mb-4 bg-teal-300"
           action="#"
           onSubmit={handleAdd}
         >
@@ -58,16 +57,21 @@ function App() {
               placeholder="Add new todo Item"
               onChange={pickValue}
               value={inputVaule}
-            />
-            <ul>
+            />        
+          </div>
+        </form>
+        <ul className="mt-8">
               {todos.map((todo) => (
-                <li className="block text-100 text-3xl font mb-4" key={todo.id}>
-                  {todo.title}
+                <li className="block text-100 text-2xl font mb-10 flex" key={todo.id}>
+                  <div className="">
+                  <input className="mr-3" type="checkbox"/>
+                  <span>{todo.title}</span>
+                  </div>
+                  <button className=" text-white flex ml-auto">x</button>
                 </li>
               ))}
             </ul>
-          </div>
-          <div className="flex justify-center m-16">
+            <div className="flex justify-center m-16">
             <button
               className="font-bold py-2 px-4 border border-black rounded"
               type="button"
@@ -75,7 +79,6 @@ function App() {
               Clear
             </button>
           </div>
-        </form>
       </div>
     </div>
   );
