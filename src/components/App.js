@@ -42,9 +42,9 @@ function App() {
     setTodos([...todos].filter(todos => todos.id !== id));
   }
 
-  // function handleClear() {
-  //   setTodos([...todos].filter(todos => todos = ''));
-  // }
+  function handleClear() {
+    setTodos([...todos].filter(todos => todos = ''));
+  }
   return (
     <div className="mt-32 flex place-content-center">
       <div className="w-full max-w-md bg-teal-300 px-8 pt-6 pb-8 mb-4">
@@ -87,7 +87,7 @@ function App() {
             <button
               className="font-bold py-2 px-4 border border-black rounded"
               type="button"
-              // onClick={handleClear}
+              onClick={handleClear}
             >
               Clear
             </button>
