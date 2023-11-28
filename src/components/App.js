@@ -38,6 +38,13 @@ function App() {
     setInputVaule("");
   }
 
+  function handleDelete(id) {
+    setTodos([...todos].filter(todos => todos.id !== id));
+  }
+
+  // function handleClear() {
+  //   setTodos([...todos].filter(todos => todos = ''));
+  // }
   return (
     <div className="mt-32 flex place-content-center">
       <div className="w-full max-w-md bg-teal-300 px-8 pt-6 pb-8 mb-4">
@@ -67,7 +74,12 @@ function App() {
                   <input className="mr-3" type="checkbox"/>
                   <span>{todo.title}</span>
                   </div>
-                  <button className=" text-white flex ml-auto">x</button>
+                  <button 
+                    className=" text-white flex ml-auto"
+                    onClick={() => handleDelete(todo.id)}
+                  >
+                    x
+                  </button>
                 </li>
               ))}
             </ul>
@@ -75,6 +87,7 @@ function App() {
             <button
               className="font-bold py-2 px-4 border border-black rounded"
               type="button"
+              // onClick={handleClear}
             >
               Clear
             </button>
