@@ -6,7 +6,7 @@ function App() {
     {
       id: "1",
       title: "Make something to eat",
-      isComplete: false,
+      isComplete: true,
     },
     {
       id: "2",
@@ -45,6 +45,17 @@ function App() {
   function handleClear() {
     setTodos([...todos].filter(todos => todos = ''));
   }
+
+  // function checkedStatus(id) {
+  //   const updateStatus = todos.map(todo => {
+  //     if(todo.id === id) {
+  //       todo.isComplete = !todo.isComplete;
+  //     }
+  //     return todo; 
+  //  });
+  //  setTodos(updateStatus);
+  // }
+
   return (
     <div className="mt-32 flex place-content-center">
       <div className="w-full max-w-md bg-teal-300 px-8 pt-6 pb-8 mb-4">
@@ -71,8 +82,12 @@ function App() {
               {todos.map((todo) => (
                 <li className="block text-100 text-2xl font mb-10 flex" key={todo.id}>
                   <div className="">
-                  <input className="mr-3" type="checkbox"/>
-                  <span>{todo.title}</span>
+                  <input 
+                    className="mr-3" 
+                    type="checkbox" 
+                    // onChange={() => checkedStatus(todo.id)}
+                  />
+                  <span className={todo.isComplete ? "line-through" : ''}>{todo.title}</span>
                   </div>
                   <button 
                     className=" text-white flex ml-auto"
